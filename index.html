@@ -1,4 +1,3 @@
-<!--
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,10 +6,10 @@
     <title>Melhores Vendas - Afiliado</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background-color: #f9f9f9;
             color: #333;
         }
         header {
@@ -19,6 +18,14 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #333;
+        }
+        p {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #666;
         }
         .container {
             width: 90%;
@@ -49,7 +56,8 @@
         }
         .product-details h2 {
             margin-top: 0;
-            font-size: 1.2em;
+            font-size: 1.5em;
+            color: #333;
         }
         .product-details p {
             margin: 10px 0;
@@ -57,40 +65,42 @@
         }
         .product-details .price {
             color: #007bff;
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin: 10px 0;
         }
         .product-details a {
             display: inline-block;
-            background-color: #28a745;
+            background-color: #007bff;
             color: #fff;
-            padding: 8px 20px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
         .product-details a:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
         .filter-container {
             margin-bottom: 20px;
             text-align: center;
         }
         .filter-container input[type="text"] {
-            padding: 8px;
+            padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
             width: 250px;
             margin-right: 10px;
+            font-family: 'Roboto', Arial, sans-serif;
         }
         .filter-container button {
-            padding: 8px 20px;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             background-color: #007bff;
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-family: 'Roboto', Arial, sans-serif;
         }
         .filter-container button:hover {
             background-color: #0056b3;
@@ -103,16 +113,29 @@
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 0 0 10px 10px;
         }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer-logo {
+            flex: 1;
+            text-align: left;
+        }
         .footer-links {
+            flex: 1;
+            text-align: right;
             margin-top: 10px;
         }
         .footer-links a {
             color: #fff;
             text-decoration: none;
             margin: 0 10px;
+            transition: color 0.3s;
         }
         .footer-links a:hover {
-            text-decoration: underline;
+            color: #f0f0f0;
         }
     </style>
 </head>
@@ -139,6 +162,7 @@
                     <a href="https://go.hotmart.com/N93699102S?dp=1" target="_blank">Comprar Agora</a>
                     <div class="secure-badge">
                         <img src="https://img.freepik.com/vetores-premium/100-icone-de-vetor-de-compras-seguro-e-seguro-com-cadeado-de-cadeado-preto-na-cor_545399-2488.jpg" alt="Secure">
+                        <span>Compra segura</span>
                     </div>
                 </div>
             </div>
@@ -152,6 +176,7 @@
                     <a href="https://go.hotmart.com/L93699448S?dp=1" target="_blank">Comprar Agora</a>
                     <div class="secure-badge">
                         <img src="https://img.freepik.com/vetores-premium/100-icone-de-vetor-de-compras-seguro-e-seguro-com-cadeado-de-cadeado-preto-na-cor_545399-2488.jpg" alt="Secure">
+                        <span>Compra segura</span>
                     </div>
                 </div>
             </div>
@@ -174,22 +199,6 @@
         </div>
     </footer>
 
+    <!-- Script para filtrar produtos -->
     <script>
-        // Função para filtrar os produtos por nome
         function filtrarProdutos() {
-            var termo = document.getElementById('filtro_nome').value.trim().toLowerCase();
-            var produtos = document.getElementsByClassName('product');
-
-            for (var i = 0; i < produtos.length; i++) {
-                var nomeProduto = produtos[i].getElementsByClassName('product-details')[0].getElementsByTagName('h2')[0].innerText.toLowerCase();
-                if (nomeProduto.includes(termo)) {
-                    produtos[i].style.display = 'flex';
-                } else {
-                    produtos[i].style.display = 'none';
-                }
-            }
-        }
-    </script>
-</body>
-</html>
--->
