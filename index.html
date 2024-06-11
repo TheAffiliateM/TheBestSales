@@ -84,11 +84,11 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        .filter-container input[type="text"] {
+        .filter-container input[type="text"],
+        .filter-container select {
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            width: 250px;
             margin-right: 10px;
             font-family: 'Roboto', Arial, sans-serif;
         }
@@ -145,15 +145,21 @@
         <p>Encontre os melhores produtos para seus clientes!</p>
     </header>
     <div class="container">
-        <!-- Interface de filtro por nome -->
+        <!-- Interface de filtro por nome e categoria -->
         <div class="filter-container">
             <input type="text" id="filtro_nome" placeholder="Digite o nome do produto">
+            <select id="filtro_categoria">
+                <option value="">Todas as categorias</option>
+                <option value="viagem">Viagem</option>
+                <option value="saude">Saúde</option>
+                <!-- Adicione mais opções de categoria conforme necessário -->
+            </select>
             <button onclick="filtrarProdutos()">Filtrar</button>
         </div>
 
         <!-- Lista de produtos -->
         <div id="lista_produtos">
-            <div class="product">
+            <div class="product" data-categoria="viagem">
                 <img src="https://m.media-amazon.com/images/I/61sgfststvL._SY466_.jpg" alt="Imagem do Produto">
                 <div class="product-details">
                     <h2>Como viajar de forma econômica</h2>
@@ -162,11 +168,10 @@
                     <a href="https://go.hotmart.com/N93699102S?dp=1" target="_blank">Comprar Agora</a>
                     <div class="secure-badge">
                         <img src="https://img.freepik.com/vetores-premium/100-icone-de-vetor-de-compras-seguro-e-seguro-com-cadeado-de-cadeado-preto-na-cor_545399-2488.jpg" alt="Secure">
-                        <span>Compra segura</span>
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product" data-categoria="saude">
                 <img src="https://hotmart.s3.amazonaws.com/product_pictures/571c5136-99ad-4908-ab9d-3fb2e13f1f08/LOGOQUEROSERMAGRA.png" alt="Imagem do Produto">
                 <div class="product-details">
                     <h2>Quero Ser Magra - O Segredo do Emagrecimento Definitivo</h2>
@@ -176,7 +181,6 @@
                     <a href="https://go.hotmart.com/L93699448S?dp=1" target="_blank">Comprar Agora</a>
                     <div class="secure-badge">
                         <img src="https://img.freepik.com/vetores-premium/100-icone-de-vetor-de-compras-seguro-e-seguro-com-cadeado-de-cadeado-preto-na-cor_545399-2488.jpg" alt="Secure">
-                        <span>Compra segura</span>
                     </div>
                 </div>
             </div>
@@ -191,14 +195,4 @@
                     <p>Encontre os melhores produtos para seus clientes!</p>
                 </div>
                 <div class="footer-links">
-                    <a href="politica_de_privacidade.html">Política de Privacidade</a>
-                    <a href="termos_de_uso.html">Termos de Uso</a>
-                    <a href="contato.html">Contato</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Script para filtrar produtos -->
-    <script>
-        function filtrarProdutos() {
+                    <a href="
